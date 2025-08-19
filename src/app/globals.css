@@ -1,0 +1,130 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 56px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+body.no-scroll,
+html.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100vw !important;
+}
+
+@media (max-width: 991.98px) {
+  .custom-navbar-menu {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .custom-navbar-menu.open {
+    transform: translateX(0);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 45px;
+  }
+
+  .close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 1100;
+  }
+}
+
+/* @media (min-width: 992px) {
+  .custom-navbar-menu {
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    transform: none;
+    flex-direction: row;
+    padding-top: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .no-scroll {
+    overflow: hidden !important;
+  }
+} */
